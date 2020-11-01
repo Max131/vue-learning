@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vue Components</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+  </head>
+  <body>
+  	<div class="container">
+  		<div id="app">
+  			
+  			<saludo></saludo>
+  			<contador></contador>
+  			<contador></contador>
+
+  		</div>
+  	</div>
+  	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  	<script src="js/component.js"></script>
+  	<script src="js/component-counter.js"></script>
+	<script>
+		
+		new Vue({
+			el: '#app',
+		})
+	</script>
+  </body>
+</html>

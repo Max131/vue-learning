@@ -1,0 +1,27 @@
+@charset "utf-8";
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+html{
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 1rem;
+}
+h1{
+    margin: 1rem 0;
+    line-height: 1.25;
+    font-weight: lighter;
+}
+input{
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    padding: 0.25rem;
+    outline: none;
+}
+input:focus, input:active{
+    border-color: slateblue; 
+}

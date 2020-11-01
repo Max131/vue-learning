@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Vue!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container" id="app">
+        <h1 class="title">{{message}}</h1>
+      <div class="" :class="['p-3', 'has-text-light', fondo]">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ea ullam dolore molestiae? Nesciunt, saepe veniam deleniti. Praesentium laudantium cupiditate mollitia itaque enim? Reprehenderit illo architecto unde repudiandae? Labore, sapiente.</p>
+      </div>
+      <input type="text" class="input my-3" v-model="fondo">
+      <div class="has-text-white p-3" :class="{'has-background-info' : color, 'has-background-success' : !color}">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, architecto, itaque. Illum dolor laboriosam vero cupiditate doloribus provident fugit dolorum aut odit voluptas, veniam. Libero aspernatur rerum praesentium ex, accusantium.</p>
+      </div>
+      <button class="button is-dark mt-4" @click="color = !color">Cambiar</button>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/vue2.js"></script>
+  </body>
+</html>
