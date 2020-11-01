@@ -4,28 +4,67 @@
     <meta charset="UTF-8">
     <title>Vue JS!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/vue.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </head>
 <body>
-    <div id="app">
-        <h1>{{ message }}</h1>
-        <h2>{{ subtitle.one }}</h2>
-        <br>
-        <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
-        <button @click='agregarFruta'>Agregar</button>
-        <br><br>
-        <ul>
-            <li v-for="fruta of frutas">
-                    {{fruta.nombre}} - {{fruta.cantidad}}
-                <input type="number" v-model.number="fruta.cantidad">
-                <button @click="fruta.cantidad++">+</button>
-                <button @click="fruta.cantidad--">-</button>
-                <span v-if="fruta.cantidad === 0">
-                    - Sin stock
-                </span>
-            </li>
-        </ul>
-        <h3>Total: {{sumarFrutas}}</h3>
+    <div class="container is-fluid">
+
+        <div id="app">
+            <div class="section has-text-centered">
+                <h1 class="title has-text-weight-light">{{ message }}</h1>
+                <h2 class="subtitle has-text-weight-light">{{ subtitle.one }}</h2>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-1">
+                    <h4>Agregar fruta: </h4>
+                </div>
+                <div class="column is-2">
+                    <div class="field has-addons">
+                        <div class="control has-icons-left">
+                            <input class="input is-small" type="text" placeholder="Escribe una fruta..." v-model="nuevaFruta" @keyup.enter="agregarFruta">
+                              <span class="icon is-left"><i class="fas fa-lemon"></i></span>
+                        </div>
+                        <div class="control">
+                            <button class="button is-info is-small" @click='agregarFruta'>Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-centered" v-for="fruta of frutas">
+                <div class="column is-1">
+                    <h4>{{fruta.nombre}}</h4>
+                </div>
+                <div class="column is-2">
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input type="number" class="input is-small" :class="fruta.cantidad === 0 ? 'is-danger':''" min="0" v-model.number="fruta.cantidad">
+                        </div>
+                        <div class="control">
+                            <button class="button is-danger is-small" @click="fruta.cantidad--">-</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-success is-small" @click="fruta.cantidad++">+</button>
+                        </div>
+                    </div>
+                    <!-- <span v-if="fruta.cantidad === 0">
+                        <strong><small>Sin existencia</small></strong>
+                    </span> -->
+                </div>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-1">
+                    <span class="heading is-size-6">Total</span>
+                </div>
+                <div class="column is-2">
+                    <strong>{{sumarFrutas}}</strong>
+                </div>
+            </div>
+            
+        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/vue.js"></script>

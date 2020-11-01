@@ -19,13 +19,11 @@ var app = new Vue({
     methods: {
     	agregarFruta (){
     		// console.log('Clicked');
+            if ( this.nuevaFruta.trim() !== '')
     		this.frutas.push({
-    			nombre: this.nuevaFruta, cantidad: 0
+    			nombre: this.nuevaFruta, cantidad: 1
     		});
     		this.nuevaFruta = '';
-    	},
-    	otroMetodo(){
-
     	}
     },
     computed: {
